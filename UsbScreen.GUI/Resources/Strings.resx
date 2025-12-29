@@ -325,7 +325,7 @@
     <value>Acknowledgements</value>
   </data>
   <data name="AcknowledgementsText" xml:space="preserve">
-    <value>Thanks to Molly Studio for the USB screen and technical documentation/examples.</value>
+    <value>Thanks to Mori Studio for the USB screen and technical documentation/examples.</value>
   </data>
   <data name="DonationLabel" xml:space="preserve">
     <value>Donation</value>
@@ -373,7 +373,7 @@
     <value>GIF Playing...</value>
   </data>
   <data name="GitHubRepoLink" xml:space="preserve">
-    <value>UsbScreen Repository</value>
+    <value>https://github.com/Blackwood416/UsbScreen</value>
   </data>
   <data name="AuthorValue" xml:space="preserve">
     <value>Blackwood</value>

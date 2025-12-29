@@ -373,7 +373,7 @@
     <value>GIF 正在播放...</value>
   </data>
   <data name="GitHubRepoLink" xml:space="preserve">
-    <value>UsbScreen 代码仓库</value>
+    <value>https://github.com/Blackwood416/UsbScreen</value>
   </data>
   <data name="AuthorValue" xml:space="preserve">
     <value>Blackwood</value>
