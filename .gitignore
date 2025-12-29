@@ -86,3 +86,5 @@ Publish/
 *.temp
 .DS_Store
 .baseDir
+publish.ps1
+release_output/

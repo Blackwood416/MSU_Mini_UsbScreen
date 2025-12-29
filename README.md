@@ -4,7 +4,7 @@
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-brightgreen.svg)
-![.NET](https://img.shields.io/badge/.NET-9.0%2F10.0-purple.svg)
+![.NET](https://img.shields.io/badge/.NET-10.0-purple.svg)
 ![Avalonia](https://img.shields.io/badge/UI-Avalonia-red.svg)
 ![AOT](https://img.shields.io/badge/Compiled-Native%20AOT-orange.svg)
 
