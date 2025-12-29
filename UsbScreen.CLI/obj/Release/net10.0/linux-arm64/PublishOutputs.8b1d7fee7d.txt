@@ -1,3 +1,0 @@
-E:\WiFiStick\UsbScreen\UsbScreen.CLI\bin\Release\net10.0\linux-arm64\publish\usb-screen
-E:\WiFiStick\UsbScreen\UsbScreen.CLI\bin\Release\net10.0\linux-arm64\publish\libSystem.IO.Ports.Native.so
-E:\WiFiStick\UsbScreen\UsbScreen.CLI\bin\Release\net10.0\linux-arm64\publish\UsbScreen.Core.pdb
