@@ -1,0 +1,550 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0/win-x64",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {},
+    ".NETCoreApp,Version=v10.0/win-x64": {
+      "UsbScreen.GUI/1.0.0": {
+        "dependencies": {
+          "Avalonia": "11.3.8",
+          "Avalonia.Desktop": "11.3.8",
+          "Avalonia.Fonts.Inter": "11.3.8",
+          "Avalonia.Themes.Fluent": "11.3.8",
+          "CommunityToolkit.Mvvm": "8.2.1",
+          "SixLabors.Fonts": "2.1.3",
+          "SixLabors.ImageSharp": "3.1.12",
+          "System.IO.Ports": "10.0.1",
+          "UsbScreen.Core": "1.0.0"
+        },
+        "runtime": {
+          "UsbScreen.GUI.dll": {}
+        },
+        "resources": {
+          "zh-CN/UsbScreen.GUI.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      },
+      "Avalonia/11.3.8": {
+        "dependencies": {
+          "Avalonia.Remote.Protocol": "11.3.8",
+          "MicroCom.Runtime": "0.11.0"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Base.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          },
+          "lib/net8.0/Avalonia.Controls.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          },
+          "lib/net8.0/Avalonia.DesignerSupport.dll": {
+            "assemblyVersion": "0.7.0.0",
+            "fileVersion": "0.7.0.0"
+          },
+          "lib/net8.0/Avalonia.Dialogs.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          },
+          "lib/net8.0/Avalonia.Markup.Xaml.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          },
+          "lib/net8.0/Avalonia.Markup.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          },
+          "lib/net8.0/Avalonia.Metal.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          },
+          "lib/net8.0/Avalonia.MicroCom.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          },
+          "lib/net8.0/Avalonia.OpenGL.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          },
+          "lib/net8.0/Avalonia.Vulkan.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          },
+          "lib/net8.0/Avalonia.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          }
+        }
+      },
+      "Avalonia.Angle.Windows.Natives/2.1.25547.20250602": {
+        "native": {
+          "runtimes/win-x64/native/av_libglesv2.dll": {
+            "fileVersion": "2.1.25606.0"
+          }
+        }
+      },
+      "Avalonia.Desktop/11.3.8": {
+        "dependencies": {
+          "Avalonia": "11.3.8",
+          "Avalonia.Native": "11.3.8",
+          "Avalonia.Skia": "11.3.8",
+          "Avalonia.Win32": "11.3.8",
+          "Avalonia.X11": "11.3.8"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Desktop.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          }
+        }
+      },
+      "Avalonia.Fonts.Inter/11.3.8": {
+        "dependencies": {
+          "Avalonia": "11.3.8"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Fonts.Inter.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          }
+        }
+      },
+      "Avalonia.FreeDesktop/11.3.8": {
+        "dependencies": {
+          "Avalonia": "11.3.8",
+          "Tmds.DBus.Protocol": "0.21.2"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.FreeDesktop.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          }
+        }
+      },
+      "Avalonia.Native/11.3.8": {
+        "dependencies": {
+          "Avalonia": "11.3.8"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Native.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          }
+        }
+      },
+      "Avalonia.Remote.Protocol/11.3.8": {
+        "runtime": {
+          "lib/net8.0/Avalonia.Remote.Protocol.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          }
+        }
+      },
+      "Avalonia.Skia/11.3.8": {
+        "dependencies": {
+          "Avalonia": "11.3.8",
+          "HarfBuzzSharp": "8.3.1.1",
+          "SkiaSharp": "2.88.9"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Skia.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          }
+        }
+      },
+      "Avalonia.Themes.Fluent/11.3.8": {
+        "dependencies": {
+          "Avalonia": "11.3.8"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Themes.Fluent.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          }
+        }
+      },
+      "Avalonia.Win32/11.3.8": {
+        "dependencies": {
+          "Avalonia": "11.3.8",
+          "Avalonia.Angle.Windows.Natives": "2.1.25547.20250602"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.Win32.Automation.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          },
+          "lib/net8.0/Avalonia.Win32.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          }
+        }
+      },
+      "Avalonia.X11/11.3.8": {
+        "dependencies": {
+          "Avalonia": "11.3.8",
+          "Avalonia.FreeDesktop": "11.3.8",
+          "Avalonia.Skia": "11.3.8"
+        },
+        "runtime": {
+          "lib/net8.0/Avalonia.X11.dll": {
+            "assemblyVersion": "11.3.8.0",
+            "fileVersion": "11.3.8.0"
+          }
+        }
+      },
+      "CommunityToolkit.Mvvm/8.2.1": {
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {
+            "assemblyVersion": "8.2.0.0",
+            "fileVersion": "8.2.1.1"
+          }
+        }
+      },
+      "HarfBuzzSharp/8.3.1.1": {
+        "dependencies": {
+          "HarfBuzzSharp.NativeAssets.Win32": "8.3.1.1"
+        },
+        "runtime": {
+          "lib/net8.0/HarfBuzzSharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "8.3.1.1"
+          }
+        }
+      },
+      "HarfBuzzSharp.NativeAssets.Win32/8.3.1.1": {
+        "native": {
+          "runtimes/win-x64/native/libHarfBuzzSharp.dll": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "MicroCom.Runtime/0.11.0": {
+        "runtime": {
+          "lib/net5.0/MicroCom.Runtime.dll": {
+            "assemblyVersion": "0.11.0.0",
+            "fileVersion": "0.11.0.0"
+          }
+        }
+      },
+      "SixLabors.Fonts/2.1.3": {
+        "runtime": {
+          "lib/net6.0/SixLabors.Fonts.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.3.0"
+          }
+        }
+      },
+      "SixLabors.ImageSharp/3.1.12": {
+        "runtime": {
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.1.12.0"
+          }
+        }
+      },
+      "SixLabors.ImageSharp.Drawing/2.1.7": {
+        "dependencies": {
+          "SixLabors.Fonts": "2.1.3",
+          "SixLabors.ImageSharp": "3.1.12"
+        },
+        "runtime": {
+          "lib/net6.0/SixLabors.ImageSharp.Drawing.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.7.0"
+          }
+        }
+      },
+      "SkiaSharp/2.88.9": {
+        "dependencies": {
+          "SkiaSharp.NativeAssets.Win32": "2.88.9"
+        },
+        "runtime": {
+          "lib/net6.0/SkiaSharp.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.9.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.Win32/2.88.9": {
+        "native": {
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "System.Configuration.ConfigurationManager/10.0.1": {
+        "dependencies": {
+          "System.Diagnostics.EventLog": "10.0.1",
+          "System.Security.Cryptography.ProtectedData": "10.0.1"
+        },
+        "runtime": {
+          "lib/net10.0/System.Configuration.ConfigurationManager.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.125.57005"
+          }
+        }
+      },
+      "System.Diagnostics.EventLog/10.0.1": {
+        "runtime": {
+          "runtimes/win/lib/net10.0/System.Diagnostics.EventLog.Messages.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win/lib/net10.0/System.Diagnostics.EventLog.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.125.57005"
+          }
+        }
+      },
+      "System.Diagnostics.PerformanceCounter/10.0.1": {
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "10.0.1"
+        },
+        "runtime": {
+          "runtimes/win/lib/net10.0/System.Diagnostics.PerformanceCounter.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.125.57005"
+          }
+        }
+      },
+      "System.IO.Ports/10.0.1": {
+        "runtime": {
+          "runtimes/win/lib/net10.0/System.IO.Ports.dll": {
+            "assemblyVersion": "10.0.0.1",
+            "fileVersion": "10.0.125.57005"
+          }
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/10.0.1": {
+        "runtime": {
+          "lib/net10.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.125.57005"
+          }
+        }
+      },
+      "Tmds.DBus.Protocol/0.21.2": {
+        "runtime": {
+          "lib/net8.0/Tmds.DBus.Protocol.dll": {
+            "assemblyVersion": "0.21.2.0",
+            "fileVersion": "0.21.2.0"
+          }
+        }
+      },
+      "UsbScreen.Core/1.0.0": {
+        "dependencies": {
+          "SixLabors.Fonts": "2.1.3",
+          "SixLabors.ImageSharp": "3.1.12",
+          "SixLabors.ImageSharp.Drawing": "2.1.7",
+          "System.Diagnostics.PerformanceCounter": "10.0.1",
+          "System.IO.Ports": "10.0.1"
+        },
+        "runtime": {
+          "UsbScreen.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UsbScreen.GUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Avalonia/11.3.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VurCL/l7FiJg+RF9iuDDhubpvY43c3bxK1QnW1UUbH3tEhBH+WUgfdp1P8ywWkSfWnx8DJPkTXXLf/4A17xvzw==",
+      "path": "avalonia/11.3.8",
+      "hashPath": "avalonia.11.3.8.nupkg.sha512"
+    },
+    "Avalonia.Angle.Windows.Natives/2.1.25547.20250602": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZL0VLc4s9rvNNFt19Pxm5UNAkmKNylugAwJPX9ulXZ6JWs/l6XZihPWWTyezaoNOVyEPU8YbURtW7XMAtqXH5A==",
+      "path": "avalonia.angle.windows.natives/2.1.25547.20250602",
+      "hashPath": "avalonia.angle.windows.natives.2.1.25547.20250602.nupkg.sha512"
+    },
+    "Avalonia.Desktop/11.3.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lod+Y6j/adzeANDCzhgJHPHPzsxXI3+i307MBctGoiQW0Ny6uGW7J+RIlQlNMawgsAbnCaa5ygEadTbGudXZWg==",
+      "path": "avalonia.desktop/11.3.8",
+      "hashPath": "avalonia.desktop.11.3.8.nupkg.sha512"
+    },
+    "Avalonia.Fonts.Inter/11.3.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-chv46ANs8TdNPzK11AJ+2kQtOO5smU98vCgBn5ujAaQaimA+IDlhmIowU1RYXne+sJ/LTyPfAOoqjsLmZyyMjg==",
+      "path": "avalonia.fonts.inter/11.3.8",
+      "hashPath": "avalonia.fonts.inter.11.3.8.nupkg.sha512"
+    },
+    "Avalonia.FreeDesktop/11.3.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jaPuqqPTBBJrUOUZ3SUhv+uD/Vy4D9Lk7W/nSdo0HPtGbUsCpuQVLILKukrYissY0eY4VQjo85VFH29hdCmduw==",
+      "path": "avalonia.freedesktop/11.3.8",
+      "hashPath": "avalonia.freedesktop.11.3.8.nupkg.sha512"
+    },
+    "Avalonia.Native/11.3.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vzLHmFSN/d5KRtpbNCT/Yv+ErxD8PV7+hlbAI75N/QqVJgQ2JTCQ5TtHiebpkcEQgkICl0NHf9CQ8sCUnXj4Zw==",
+      "path": "avalonia.native/11.3.8",
+      "hashPath": "avalonia.native.11.3.8.nupkg.sha512"
+    },
+    "Avalonia.Remote.Protocol/11.3.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9JukvgTHAOLL7h2aL5WXZGKkhHlW8Rk6Am5tvoxDvVJt/UHkYrtr9IcAg/iKff4GcA0ZYY6jsG2jmweEyC2WgQ==",
+      "path": "avalonia.remote.protocol/11.3.8",
+      "hashPath": "avalonia.remote.protocol.11.3.8.nupkg.sha512"
+    },
+    "Avalonia.Skia/11.3.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dyrtpwFbUnE6jgUQ1sLEIM8xtz/YSwOp6zsr0k2yqCsJpTsypBtdQg8YPNS3E4wK/rc9zsCObfONb8Zkb6/gsA==",
+      "path": "avalonia.skia/11.3.8",
+      "hashPath": "avalonia.skia.11.3.8.nupkg.sha512"
+    },
+    "Avalonia.Themes.Fluent/11.3.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RGlEs6PrEA3y/kVLMkaw4y4H8lrYO0/4IJXKJKAf8I1lRIy2hWnh0v9FYqcFn9OT7sVGWj/BZT4mnqYof94UyQ==",
+      "path": "avalonia.themes.fluent/11.3.8",
+      "hashPath": "avalonia.themes.fluent.11.3.8.nupkg.sha512"
+    },
+    "Avalonia.Win32/11.3.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gOdOrBzGw/nzHkr/8aZKcYIARsiFqFD5SJjlKVd42tlXsy4ZE3Q+Mpq91FxZKTWOCs87UMoBpVSzImoq9JIrcQ==",
+      "path": "avalonia.win32/11.3.8",
+      "hashPath": "avalonia.win32.11.3.8.nupkg.sha512"
+    },
+    "Avalonia.X11/11.3.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TKshsGs3Vy+DH7r2CcPHHoKi3qFMF46cjRTrBT+kge0w+7jo+RgWBLNt1wmlfGH2f4P7ecyApTXQA0c83qGcuA==",
+      "path": "avalonia.x11/11.3.8",
+      "hashPath": "avalonia.x11.11.3.8.nupkg.sha512"
+    },
+    "CommunityToolkit.Mvvm/8.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-I24ofWVEdplxYjUez9/bljv/qb8r8Ccj6cvYXHexNBegLaD3iDy3QrzAAOYVMmfGWIXxlU1ZtECQNfU07+6hXQ==",
+      "path": "communitytoolkit.mvvm/8.2.1",
+      "hashPath": "communitytoolkit.mvvm.8.2.1.nupkg.sha512"
+    },
+    "HarfBuzzSharp/8.3.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tLZN66oe/uiRPTZfrCU4i8ScVGwqHNh5MHrXj0yVf4l7Mz0FhTGnQ71RGySROTmdognAs0JtluHkL41pIabWuQ==",
+      "path": "harfbuzzsharp/8.3.1.1",
+      "hashPath": "harfbuzzsharp.8.3.1.1.nupkg.sha512"
+    },
+    "HarfBuzzSharp.NativeAssets.Win32/8.3.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UsJtQsfAJoFDZrXc4hCUfRPMqccfKZ0iumJ/upcUjz/cmsTgVFGNEL5yaJWmkqsuFYdMWbj/En5/kS4PFl9hBA==",
+      "path": "harfbuzzsharp.nativeassets.win32/8.3.1.1",
+      "hashPath": "harfbuzzsharp.nativeassets.win32.8.3.1.1.nupkg.sha512"
+    },
+    "MicroCom.Runtime/0.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MEnrZ3UIiH40hjzMDsxrTyi8dtqB5ziv3iBeeU4bXsL/7NLSal9F1lZKpK+tfBRnUoDSdtcW3KufE4yhATOMCA==",
+      "path": "microcom.runtime/0.11.0",
+      "hashPath": "microcom.runtime.0.11.0.nupkg.sha512"
+    },
+    "SixLabors.Fonts/2.1.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ORWbZ5BHrC/LZvo+Y09MnoJq5VUKD85LsYALk+YI7CHFra+m5arCkz00IntDM6SrAiB22bvSdKtKmuCyHOKlqg==",
+      "path": "sixlabors.fonts/2.1.3",
+      "hashPath": "sixlabors.fonts.2.1.3.nupkg.sha512"
+    },
+    "SixLabors.ImageSharp/3.1.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iAg6zifihXEFS/t7fiHhZBGAdCp3FavsF4i2ZIDp0JfeYeDVzvmlbY1CNhhIKimaIzrzSi5M/NBFcWvZT2rB/A==",
+      "path": "sixlabors.imagesharp/3.1.12",
+      "hashPath": "sixlabors.imagesharp.3.1.12.nupkg.sha512"
+    },
+    "SixLabors.ImageSharp.Drawing/2.1.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9KwCo9Fa350cx6ckpsy8NqXQZKwir4RQ8Kj0sdCmJA7wsK9FMyfgC527Sn4l/D6bj2ditSHlhS7dGzcgGszvSQ==",
+      "path": "sixlabors.imagesharp.drawing/2.1.7",
+      "hashPath": "sixlabors.imagesharp.drawing.2.1.7.nupkg.sha512"
+    },
+    "SkiaSharp/2.88.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3MD5VHjXXieSHCleRLuaTXmL2pD0mB7CcOB1x2kA1I4bhptf4e3R27iM93264ZYuAq6mkUyX5XbcxnZvMJYc1Q==",
+      "path": "skiasharp/2.88.9",
+      "hashPath": "skiasharp.2.88.9.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.Win32/2.88.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wb2kYgU7iy84nQLYZwMeJXixvK++GoIuECjU4ECaUKNuflyRlJKyiRhN1MAHswvlvzuvkrjRWlK0Za6+kYQK7w==",
+      "path": "skiasharp.nativeassets.win32/2.88.9",
+      "hashPath": "skiasharp.nativeassets.win32.2.88.9.nupkg.sha512"
+    },
+    "System.Configuration.ConfigurationManager/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HfOAIlSA8OuaxBZD6xjsUWhtB0KdKSWEfRId8gSGveLUjuP6G8IxfiFgJNxaiRIEC1kx4pSvz3Em5xW/J6LLxA==",
+      "path": "system.configuration.configurationmanager/10.0.1",
+      "hashPath": "system.configuration.configurationmanager.10.0.1.nupkg.sha512"
+    },
+    "System.Diagnostics.EventLog/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xfaHEHVDkMOOZR5S6ZGezD0+vekdH1Nx/9Ih8/rOqOGSOk1fxiN3u94bYkBW/wigj0Uw2Wt3vvRj9mtYdgwEjw==",
+      "path": "system.diagnostics.eventlog/10.0.1",
+      "hashPath": "system.diagnostics.eventlog.10.0.1.nupkg.sha512"
+    },
+    "System.Diagnostics.PerformanceCounter/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5kYRbAdsUydb+FyNiQZu7PEgdyWSq+g3xdVzlV52k65jvRdkGQKzsxvmAetTzxiX3OigN7cpbu0ZZdpSNBw78Q==",
+      "path": "system.diagnostics.performancecounter/10.0.1",
+      "hashPath": "system.diagnostics.performancecounter.10.0.1.nupkg.sha512"
+    },
+    "System.IO.Ports/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2aDgBhEsZzlJBYqcI7bvEL6IsWq1KWGNdilscFIxW48QBoTQbxES0aVhB8YmvVZXwEVrcUQb4XNShBmsqg/l3Q==",
+      "path": "system.io.ports/10.0.1",
+      "hashPath": "system.io.ports.10.0.1.nupkg.sha512"
+    },
+    "System.Security.Cryptography.ProtectedData/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9SqHNq+lAjZeyPcm69FTQEjr+wsRYvkS3aW8yxoEndVYwDRkCrsP/44QPqpWHwzevoX26rkOoQ6kr7GZWngw2A==",
+      "path": "system.security.cryptography.protecteddata/10.0.1",
+      "hashPath": "system.security.cryptography.protecteddata.10.0.1.nupkg.sha512"
+    },
+    "Tmds.DBus.Protocol/0.21.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ScSMrUrrw8px4kK1Glh0fZv/HQUlg1078bNXNPfRPKQ3WbRzV9HpsydYEOgSoMK5LWICMf2bMwIFH0pGjxjcMA==",
+      "path": "tmds.dbus.protocol/0.21.2",
+      "hashPath": "tmds.dbus.protocol.0.21.2.nupkg.sha512"
+    },
+    "UsbScreen.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

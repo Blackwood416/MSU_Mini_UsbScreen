@@ -1,0 +1,12 @@
+E:\WiFiStick\UsbScreen\UsbScreen.Core\bin\Release\net10.0\linux-arm64\publish\UsbScreen.Core.dll
+E:\WiFiStick\UsbScreen\UsbScreen.Core\bin\Release\net10.0\linux-arm64\publish\UsbScreen.Core.deps.json
+E:\WiFiStick\UsbScreen\UsbScreen.Core\bin\Release\net10.0\linux-arm64\publish\UsbScreen.Core.pdb
+E:\WiFiStick\UsbScreen\UsbScreen.Core\bin\Release\net10.0\linux-arm64\publish\SixLabors.Fonts.dll
+E:\WiFiStick\UsbScreen\UsbScreen.Core\bin\Release\net10.0\linux-arm64\publish\SixLabors.ImageSharp.dll
+E:\WiFiStick\UsbScreen\UsbScreen.Core\bin\Release\net10.0\linux-arm64\publish\SixLabors.ImageSharp.Drawing.dll
+E:\WiFiStick\UsbScreen\UsbScreen.Core\bin\Release\net10.0\linux-arm64\publish\System.Configuration.ConfigurationManager.dll
+E:\WiFiStick\UsbScreen\UsbScreen.Core\bin\Release\net10.0\linux-arm64\publish\System.Diagnostics.EventLog.dll
+E:\WiFiStick\UsbScreen\UsbScreen.Core\bin\Release\net10.0\linux-arm64\publish\System.Diagnostics.PerformanceCounter.dll
+E:\WiFiStick\UsbScreen\UsbScreen.Core\bin\Release\net10.0\linux-arm64\publish\System.IO.Ports.dll
+E:\WiFiStick\UsbScreen\UsbScreen.Core\bin\Release\net10.0\linux-arm64\publish\System.Security.Cryptography.ProtectedData.dll
+E:\WiFiStick\UsbScreen\UsbScreen.Core\bin\Release\net10.0\linux-arm64\publish\libSystem.IO.Ports.Native.so

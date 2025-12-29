@@ -1,0 +1,12 @@
+E:\WiFiStick\UsbScreen\UsbScreen.Core\bin\Release\net10.0\UsbScreen.Core.deps.json
+E:\WiFiStick\UsbScreen\UsbScreen.Core\bin\Release\net10.0\UsbScreen.Core.dll
+E:\WiFiStick\UsbScreen\UsbScreen.Core\bin\Release\net10.0\UsbScreen.Core.pdb
+E:\WiFiStick\UsbScreen\UsbScreen.Core\obj\Release\net10.0\UsbScreen.Core.csproj.AssemblyReference.cache
+E:\WiFiStick\UsbScreen\UsbScreen.Core\obj\Release\net10.0\UsbScreen.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\WiFiStick\UsbScreen\UsbScreen.Core\obj\Release\net10.0\UsbScreen.Core.AssemblyInfoInputs.cache
+E:\WiFiStick\UsbScreen\UsbScreen.Core\obj\Release\net10.0\UsbScreen.Core.AssemblyInfo.cs
+E:\WiFiStick\UsbScreen\UsbScreen.Core\obj\Release\net10.0\UsbScreen.Core.csproj.CoreCompileInputs.cache
+E:\WiFiStick\UsbScreen\UsbScreen.Core\obj\Release\net10.0\UsbScreen.Core.dll
+E:\WiFiStick\UsbScreen\UsbScreen.Core\obj\Release\net10.0\refint\UsbScreen.Core.dll
+E:\WiFiStick\UsbScreen\UsbScreen.Core\obj\Release\net10.0\UsbScreen.Core.pdb
+E:\WiFiStick\UsbScreen\UsbScreen.Core\obj\Release\net10.0\ref\UsbScreen.Core.dll

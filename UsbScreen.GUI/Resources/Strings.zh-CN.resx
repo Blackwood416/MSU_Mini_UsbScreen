@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="0" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <!-- 应用标题 -->
+  <data name="AppTitle" xml:space="preserve">
+    <value>USB 屏幕管理器</value>
+  </data>
+  <!-- 连接区域 -->
+  <data name="Connection" xml:space="preserve">
+    <value>连接</value>
+  </data>
+  <data name="SelectPort" xml:space="preserve">
+    <value>选择端口</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>连接</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>断开</value>
+  </data>
+  <data name="Ready" xml:space="preserve">
+    <value>就绪</value>
+  </data>
+  <data name="Connected" xml:space="preserve">
+    <value>已连接到 {0}</value>
+  </data>
+  <data name="Disconnected" xml:space="preserve">
+    <value>已断开连接</value>
+  </data>
+  <data name="NotConnected" xml:space="preserve">
+    <value>未连接</value>
+  </data>
+  <data name="NoPortSelected" xml:space="preserve">
+    <value>未选择端口</value>
+  </data>
+  <data name="ConnectionFailed" xml:space="preserve">
+    <value>连接失败：{0}</value>
+  </data>
+  <!-- 标签页 -->
+  <data name="TabImageDisplay" xml:space="preserve">
+    <value>图像显示</value>
+  </data>
+  <data name="TabTextDisplay" xml:space="preserve">
+    <value>文字显示</value>
+  </data>
+  <data name="TabImageSlideshow" xml:space="preserve">
+    <value>图像轮播</value>
+  </data>
+  <data name="TabTextSlideshow" xml:space="preserve">
+    <value>文字轮播</value>
+  </data>
+  <data name="TabFlashTool" xml:space="preserve">
+    <value>固件烧录</value>
+  </data>
+  <!-- 图像显示 -->
+  <data name="DisplayImage" xml:space="preserve">
+    <value>显示图像</value>
+  </data>
+  <data name="ImageDescription" xml:space="preserve">
+    <value>选择并在设备上显示图像。</value>
+  </data>
+  <data name="ImageFile" xml:space="preserve">
+    <value>图像文件：</value>
+  </data>
+  <data name="ImagePathPlaceholder" xml:space="preserve">
+    <value>图像路径 (png, jpg, gif)...</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>浏览</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>选项：</value>
+  </data>
+  <data name="Scaling" xml:space="preserve">
+    <value>缩放</value>
+  </data>
+  <data name="ResizeMode" xml:space="preserve">
+    <value>调整模式</value>
+  </data>
+  <data name="SendToScreen" xml:space="preserve">
+    <value>发送到屏幕</value>
+  </data>
+  <!-- 文字显示 -->
+  <data name="DisplayText" xml:space="preserve">
+    <value>显示文字</value>
+  </data>
+  <data name="TextDescription" xml:space="preserve">
+    <value>编辑多行文字。</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>背景：</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>内容...</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>颜色</value>
+  </data>
+  <data name="AddLine" xml:space="preserve">
+    <value>+ 添加行</value>
+  </data>
+  <data name="SendText" xml:space="preserve">
+    <value>发送文字</value>
+  </data>
+  <!-- 轮播 -->
+  <data name="Slideshow" xml:space="preserve">
+    <value>轮播</value>
+  </data>
+  <data name="SlideshowDescription" xml:space="preserve">
+    <value>按设定时间间隔循环显示图像。</value>
+  </data>
+  <data name="AddImages" xml:space="preserve">
+    <value>添加图像</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>清空</value>
+  </data>
+  <data name="IntervalSeconds" xml:space="preserve">
+    <value>间隔（秒）：</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>开始</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="DragDropHint" xml:space="preserve">
+    <value>拖放文件到此处或点击添加</value>
+  </data>
+  <!-- 固件烧录 -->
+  <data name="FlashFirmware" xml:space="preserve">
+    <value>固件烧录</value>
+  </data>
+  <data name="FlashDescription" xml:space="preserve">
+    <value>将二进制数据或图像写入设备闪存。</value>
+  </data>
+  <data name="TargetFile" xml:space="preserve">
+    <value>目标文件：</value>
+  </data>
+  <data name="FlashFilePlaceholder" xml:space="preserve">
+    <value>选择 .bin 或图像文件...</value>
+  </data>
+  <data name="FlashType" xml:space="preserve">
+    <value>烧录类型：</value>
+  </data>
+  <data name="StartFlashing" xml:space="preserve">
+    <value>开始烧录</value>
+  </data>
+  <!-- 状态消息 -->
+  <data name="ProcessingImage" xml:space="preserve">
+    <value>正在处理图像...</value>
+  </data>
+  <data name="ImageDisplayed" xml:space="preserve">
+    <value>图像已显示</value>
+  </data>
+  <data name="DisplayingText" xml:space="preserve">
+    <value>正在显示文字...</value>
+  </data>
+  <data name="TextDisplayed" xml:space="preserve">
+    <value>文字已显示</value>
+  </data>
+  <data name="PreparingFlash" xml:space="preserve">
+    <value>准备烧录...</value>
+  </data>
+  <data name="FlashComplete" xml:space="preserve">
+    <value>烧录完成！</value>
+  </data>
+  <data name="InvalidImageFile" xml:space="preserve">
+    <value>无效的图像文件</value>
+  </data>
+  <data name="InvalidFlashFile" xml:space="preserve">
+    <value>无效的烧录文件</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>错误：{0}</value>
+  </data>
+  <!-- 设置 -->
+  <data name="Theme" xml:space="preserve">
+    <value>主题</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <!-- 拖放 -->
+  <data name="DropFilesHere" xml:space="preserve">
+    <value>将文件拖放到此处</value>
+  </data>
+  <!-- 设置 -->
+  <data name="Settings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="RestartRequired" xml:space="preserve">
+    <value>需要重启应用以生效</value>
+  </data>
+  <data name="RestartNow" xml:space="preserve">
+    <value>立即重启</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <!-- 可视化设计 -->
+  <data name="Pages" xml:space="preserve">
+    <value>页面列表</value>
+  </data>
+  <data name="DesignerTitle" xml:space="preserve">
+    <value>可视化设计 (160x80)</value>
+  </data>
+  <data name="SendPage" xml:space="preserve">
+    <value>发送当前页</value>
+  </data>
+  <data name="PageProperties" xml:space="preserve">
+    <value>页面属性</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="DurationSeconds" xml:space="preserve">
+    <value>时长 (秒)</value>
+  </data>
+  <data name="DurationFormat" xml:space="preserve">
+    <value>时长: {0}秒</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="AddTextLayer" xml:space="preserve">
+    <value>添加文本</value>
+  </data>
+  <data name="RemoveTextLayer" xml:space="preserve">
+    <value>删除文本</value>
+  </data>
+  <data name="LayerProperties" xml:space="preserve">
+    <value>图层属性</value>
+  </data>
+  <data name="TextLabel" xml:space="preserve">
+    <value>文本</value>
+  </data>
+  <data name="PositionX" xml:space="preserve">
+    <value>X坐标</value>
+  </data>
+  <data name="PositionY" xml:space="preserve">
+    <value>Y坐标</value>
+  </data>
+  <data name="FontSize" xml:space="preserve">
+    <value>字号</value>
+  </data>
+  <data name="FontFamily" xml:space="preserve">
+    <value>字体</value>
+  </data>
+  <data name="SelectLayerHint" xml:space="preserve">
+    <value>请选择一个图层以编辑属性</value>
+  </data>
+  <data name="DynamicVariablesHint" xml:space="preserve">
+    <value>支持变量: %CPU%, %RAM%, %TIME%, %DATE%, %INET%</value>
+  </data>
+  <data name="ColorHint" xml:space="preserve">
+    <value>支持内置颜色名称 (如 Red) 或 Hex 代码 (如 #FF0000)</value>
+  </data>
+  <data name="MoveLayerUp" xml:space="preserve">
+    <value>上移图层</value>
+  </data>
+  <data name="MoveLayerDown" xml:space="preserve">
+    <value>下移图层</value>
+  </data>
+  <data name="DuplicateLayer" xml:space="preserve">
+    <value>复制图层</value>
+  </data>
+  <data name="StopRotation" xml:space="preserve">
+    <value>停止轮播</value>
+  </data>
+  <data name="StartRotation" xml:space="preserve">
+    <value>开始轮播</value>
+  </data>
+  <data name="AuthorLabel" xml:space="preserve">
+    <value>项目作者</value>
+  </data>
+  <data name="AcknowledgementsLabel" xml:space="preserve">
+    <value>致谢信息</value>
+  </data>
+  <data name="AcknowledgementsText" xml:space="preserve">
+    <value>感谢墨砺工作室制作的USB屏幕和提供技术文档及范例</value>
+  </data>
+  <data name="DonationLabel" xml:space="preserve">
+    <value>捐赠支持</value>
+  </data>
+  <data name="GitHubLabel" xml:space="preserve">
+    <value>GitHub 链接</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="StatusReady" xml:space="preserve">
+    <value>就绪</value>
+  </data>
+  <data name="DefaultPageName" xml:space="preserve">
+    <value>主页面</value>
+  </data>
+  <data name="StatusRotationStopped" xml:space="preserve">
+    <value>轮播已停止</value>
+  </data>
+  <data name="StatusNotConnected" xml:space="preserve">
+    <value>未连接</value>
+  </data>
+  <data name="StatusRendererError" xml:space="preserve">
+    <value>渲染器未初始化</value>
+  </data>
+  <data name="InvalidImageFile" xml:space="preserve">
+    <value>无效的图片文件</value>
+  </data>
+  <data name="ProcessingImage" xml:space="preserve">
+    <value>正在处理图片...</value>
+  </data>
+  <data name="ImageDisplayed" xml:space="preserve">
+    <value>图片已显示</value>
+  </data>
+  <data name="InvalidFlashFile" xml:space="preserve">
+    <value>无效的固件文件</value>
+  </data>
+  <data name="PreparingToFlash" xml:space="preserve">
+    <value>正在准备刷写...</value>
+  </data>
+  <data name="FlashComplete" xml:space="preserve">
+    <value>刷写完成！</value>
+  </data>
+  <data name="GifPlaying" xml:space="preserve">
+    <value>GIF 正在播放...</value>
+  </data>
+  <data name="GitHubRepoLink" xml:space="preserve">
+    <value>UsbScreen 代码仓库</value>
+  </data>
+  <data name="AuthorValue" xml:space="preserve">
+    <value>Blackwood</value>
+  </data>
+  <data name="ErrorPrefix" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="KeepAlive" xml:space="preserve">
+    <value>持续显示</value>
+  </data>
+  <!-- 保存/加载预设 -->
+  <data name="SavePreset" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="LoadPreset" xml:space="preserve">
+    <value>加载</value>
+  </data>
+  <data name="SavePresetTooltip" xml:space="preserve">
+    <value>将当前设置保存到预设文件</value>
+  </data>
+  <data name="LoadPresetTooltip" xml:space="preserve">
+    <value>从预设文件加载设置</value>
+  </data>
+  <data name="PresetSaved" xml:space="preserve">
+    <value>预设已保存</value>
+  </data>
+  <data name="PresetLoaded" xml:space="preserve">
+    <value>预设已加载</value>
+  </data>
+  <data name="InvalidPresetFile" xml:space="preserve">
+    <value>无效的预设文件</value>
+  </data>
+  <!-- 系统托盘 -->
+  <data name="MinimizeToTray" xml:space="preserve">
+    <value>关闭时最小化到托盘</value>
+  </data>
+  <data name="TrayShowWindow" xml:space="preserve">
+    <value>显示窗口</value>
+  </data>
+  <data name="TrayHideWindow" xml:space="preserve">
+    <value>隐藏窗口</value>
+  </data>
+  <data name="TrayExit" xml:space="preserve">
+    <value>退出</value>
+  </data>
+</root>

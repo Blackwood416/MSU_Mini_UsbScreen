@@ -1,0 +1,479 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:UsbScreen.GUI.ViewModels"
+        xmlns:models="using:UsbScreen.GUI.Models"
+        xmlns:local="using:UsbScreen.GUI"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="600"
+        x:Class="UsbScreen.GUI.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="{local:Localize AppTitle}"
+        Width="1200" Height="800"
+        WindowStartupLocation="CenterScreen"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        ExtendClientAreaTitleBarHeightHint="-1"
+        TransparencyLevelHint="Mica, AcrylicBlur"
+        Background="{DynamicResource SystemRegionBrush}"
+        DragDrop.AllowDrop="True"
+        x:Name="RootWindow">
+
+    <Window.Styles>
+        <Style Selector="Button.accent">
+            <Setter Property="Background" Value="{DynamicResource SystemAccentColor}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="Button.accent:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource SystemAccentColorDark1}"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="TextBlock.h1">
+           <Setter Property="FontSize" Value="24"/>
+           <Setter Property="FontWeight" Value="SemiBold"/>
+           <Setter Property="Foreground" Value="{DynamicResource TextControlForeground}"/>
+        </Style>
+        <Style Selector="TextBlock.label">
+           <Setter Property="Foreground" Value="{DynamicResource TextControlForegroundDisabled}"/>
+           <Setter Property="VerticalAlignment" Value="Center"/>
+           <Setter Property="FontSize" Value="13"/>
+        </Style>
+        <Style Selector="Border.card">
+            <Setter Property="Background" Value="{DynamicResource CardBackgroundFillColorDefaultBrush}"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="BoxShadow" Value="0 2 4 0 #10000000"/>
+        </Style>
+        <Style Selector="TabItem">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Foreground" Value="{DynamicResource TextControlForeground}"/>
+            <Setter Property="Margin" Value="0,0,10,0"/>
+        </Style>
+        <Style Selector="TabItem:selected">
+            <Setter Property="Foreground" Value="{DynamicResource SystemAccentColor}"/>
+        </Style>
+    </Window.Styles>
+
+    <Panel Margin="0,10,0,0">
+        <!-- Custom Title Bar Background -->
+        <Border Height="30" VerticalAlignment="Top" Background="{DynamicResource LayerFillColorAltBrush}" IsHitTestVisible="False"/>
+
+        <Grid RowDefinitions="30, *">
+             <!-- Title Bar Content -->
+             <Grid ColumnDefinitions="Auto, *, Auto">
+                 <TextBlock Text="{local:Localize AppTitle}" VerticalAlignment="Center" Margin="15,0,0,0" FontWeight="SemiBold" FontSize="12" Foreground="{DynamicResource TextControlForeground}"/>
+                 
+                  <!-- Window Controls & Settings -->
+                  <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="0" VerticalAlignment="Top">
+                      <!-- Settings Button -->
+                      <Button Command="{Binding OpenSettingsCommand}" 
+                              ToolTip.Tip="{local:Localize Settings}"
+                              Background="Transparent" 
+                              Padding="6,4"
+                              Margin="0,0,8,0"
+                              VerticalAlignment="Center">
+                          <StackPanel Orientation="Horizontal" Spacing="4">
+                              <TextBlock Text="⚙️" FontSize="14"/>
+                              <TextBlock Text="{local:Localize Settings}" FontSize="11" VerticalAlignment="Center"/>
+                          </StackPanel>
+                      </Button>
+
+                     <!-- Window Buttons -->
+                     <Button Command="{Binding MinimizeWindowCommand}" Content="—" Width="46" Height="30" CornerRadius="0" Background="Transparent" BorderThickness="0"/>
+                     <Button Command="{Binding MaximizeWindowCommand}" Content="▢" Width="46" Height="30" CornerRadius="0" Background="Transparent" BorderThickness="0"/>
+                     <Button Command="{Binding CloseWindowCommand}" Content="✕" Width="46" Height="30" CornerRadius="0" 
+                                Background="#00000000" BorderThickness="0">
+                        <Button.Styles>
+                            <Style Selector="Button:pointerover /template/ ContentPresenter">
+                                <Setter Property="Background" Value="#C42B1C"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Style>
+                        </Button.Styles>
+                     </Button>
+                  </StackPanel>
+             </Grid>
+             
+             <Grid Grid.Row="1" ColumnDefinitions="260, *" Margin="0">
+                  <!-- Sidebar -->
+                  <Border Grid.Column="0" Background="{DynamicResource LayerFillColorDefaultBrush}" BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}" BorderThickness="0,0,1,0">
+                      <DockPanel LastChildFill="True" Margin="20">
+                           <!-- Connection Status -->
+                           <StackPanel DockPanel.Dock="Top" Spacing="15">
+                               <TextBlock Text="{local:Localize Connection}" Classes="label" FontWeight="Bold"/>
+                               
+                               <StackPanel Spacing="8">
+                                   <ComboBox ItemsSource="{Binding AvailablePorts}" 
+                                             SelectedItem="{Binding SelectedPort}"
+                                             PlaceholderText="{local:Localize SelectPort}"
+                                             HorizontalAlignment="Stretch"/>
+                                   
+                                   <Grid ColumnDefinitions="*, 8, *">
+                                       <Button Grid.Column="0" Command="{Binding RefreshPortsCommand}" Content="{local:Localize Refresh}" HorizontalAlignment="Stretch"/>
+                                       <Button Grid.Column="2" Command="{Binding ConnectCommand}" 
+                                               Content="{Binding ConnectButtonText}" 
+                                               Background="{Binding ConnectButtonColor}"
+                                               Foreground="White"
+                                               HorizontalAlignment="Stretch"/>
+                                   </Grid>
+                               </StackPanel>
+                               
+                               <Border Background="{DynamicResource SystemAccentColorLight2}" 
+                                       CornerRadius="4" Padding="10" Margin="0,10,0,0"
+                                       BorderBrush="{DynamicResource SystemAccentColor}" BorderThickness="1">
+                                    <TextBlock Text="{Binding StatusMessage}" TextWrapping="Wrap" FontSize="12" Foreground="{DynamicResource TextControlForeground}" FontWeight="Medium" HorizontalAlignment="Center"/>
+                               </Border>
+                               
+                               <TextBlock Text="{Binding StatusMessage}" TextWrapping="Wrap" FontSize="11" Foreground="{DynamicResource TextControlForegroundDisabled}" IsVisible="{Binding !IsConnected}"/>
+                           </StackPanel>
+                           
+                           <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+                               <Button Command="{Binding OpenAboutCommand}" Background="Transparent" Padding="4" BorderThickness="0" HorizontalAlignment="Left" CornerRadius="4">
+                                   <TextBlock Text="{Binding AppVersion}" Foreground="{DynamicResource TextControlForegroundDisabled}" FontSize="12" Cursor="Hand" Opacity="0.7"/>
+                               </Button>
+                           </StackPanel>
+                      </DockPanel>
+                  </Border>
+
+                  <!-- Main Content -->
+                  <Border Grid.Column="1" Background="{DynamicResource CardBackgroundFillColorDefaultBrush}" Margin="20,20,20,20" CornerRadius="8" BoxShadow="0 4 10 0 #10000000">
+                      <TabControl Margin="0" Padding="0">
+                           <TabItem Header="{local:Localize TabImageDisplay}">
+                               <Grid Margin="25" RowDefinitions="Auto, 30, Auto, 30, Auto, *">
+                                   <StackPanel Grid.Row="0" Spacing="8">
+                                       <TextBlock Text="{local:Localize DisplayImage}" Classes="h1"/>
+                                       <TextBlock Text="{local:Localize ImageDescription}" Classes="label"/>
+                                   </StackPanel>
+                                   
+                                   <Grid Grid.Row="2" ColumnDefinitions="Auto, 15, *" RowDefinitions="Auto, 15, Auto">
+                                       <TextBlock Grid.Row="0" Grid.Column="0" Text="{local:Localize ImageFile}" Classes="label"/>
+                                       <Grid Grid.Row="0" Grid.Column="2" ColumnDefinitions="*, 10, Auto">
+                                            <TextBox Grid.Column="0" Text="{Binding ImagePath}" Watermark="{local:Localize ImagePathPlaceholder}"/>
+                                            <Button Grid.Column="2" Content="{local:Localize Browse}" Command="{Binding BrowseImageCommand}"/>
+                                       </Grid>
+                                       
+                                       <TextBlock Grid.Row="2" Grid.Column="0" Text="{local:Localize Options}" Classes="label" VerticalAlignment="Top" Margin="0,8,0,0"/>
+                                       <Grid Grid.Row="2" Grid.Column="2" ColumnDefinitions="*, 15, *">
+                                            <StackPanel Grid.Column="0" Spacing="5">
+                                                <TextBlock Text="{local:Localize Scaling}" FontSize="11" Foreground="{DynamicResource TextControlForegroundDisabled}"/>
+                                                <ComboBox ItemsSource="{Binding ScaleOptions}" SelectedItem="{Binding SelectedScale}" HorizontalAlignment="Stretch"/>
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="2" Spacing="5">
+                                                <TextBlock Text="{local:Localize ResizeMode}" FontSize="11" Foreground="{DynamicResource TextControlForegroundDisabled}"/>
+                                                <ComboBox ItemsSource="{Binding ModeOptions}" SelectedItem="{Binding SelectedMode}" HorizontalAlignment="Stretch"/>
+                                            </StackPanel>
+                                       </Grid>
+                                   </Grid>
+                                   
+                                   <Grid Grid.Row="4" ColumnDefinitions="Auto, Auto, Auto, *">
+                                       <CheckBox IsChecked="{Binding IsKeepAliveEnabled}" Content="{local:Localize KeepAlive}" VerticalAlignment="Center"/>
+                                       <Button Grid.Column="1" Command="{Binding SaveImagePresetCommand}" Content="{local:Localize SavePreset}" Margin="15,0,5,0" ToolTip.Tip="{local:Localize SavePresetTooltip}"/>
+                                       <Button Grid.Column="2" Command="{Binding LoadImagePresetCommand}" Content="{local:Localize LoadPreset}" ToolTip.Tip="{local:Localize LoadPresetTooltip}"/>
+                                       <Button Grid.Column="3" Command="{Binding ShowImageCommand}" Content="{local:Localize SendToScreen}" Classes="accent" HorizontalAlignment="Right" Padding="30,12" FontSize="14"/>
+                                   </Grid>
+                               </Grid>
+                           </TabItem>
+                           
+                           <TabItem Header="{local:Localize TabTextDisplay}">
+                               <Grid Margin="10" ColumnDefinitions="200, *, 250">
+                                   <!-- Left: Page List -->
+                                   <Grid Grid.Column="0" RowDefinitions="Auto, *, Auto, Auto" Margin="0,0,10,0">
+                                       <TextBlock Text="{local:Localize Pages}" Classes="h1" FontSize="18" Margin="0,0,0,10"/>
+                                       
+                                       <Border Grid.Row="1" BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}" BorderThickness="1" CornerRadius="4">
+                                           <ListBox ItemsSource="{Binding Pages}" SelectedItem="{Binding SelectedPage}" Background="{DynamicResource CardBackgroundFillColorDefaultBrush}">
+                                               <ListBox.ItemTemplate>
+                                                   <DataTemplate>
+                                                       <StackPanel Spacing="2">
+                                                           <TextBlock Text="{Binding Name}" FontWeight="Medium"/>
+                                                           <TextBlock FontSize="10" Foreground="{DynamicResource TextControlForegroundDisabled}">
+                                                               <Run Text="{local:Localize DurationSeconds}"/>
+                                                               <Run Text=": "/>
+                                                               <Run Text="{Binding DurationSeconds}"/>
+                                                               <Run Text="s"/>
+                                                           </TextBlock>
+                                                       </StackPanel>
+                                                   </DataTemplate>
+                                               </ListBox.ItemTemplate>
+                                           </ListBox>
+                                       </Border>
+                                       
+                                       <Grid Grid.Row="2" ColumnDefinitions="*, 10, *" Margin="0,10,0,0">
+                                           <Button Grid.Column="0" Command="{Binding AddPageCommand}" Content="{local:Localize Add}" HorizontalAlignment="Stretch"/>
+                                           <Button Grid.Column="2" Command="{Binding RemovePageCommand}" CommandParameter="{Binding SelectedPage}" Content="{local:Localize Remove}" HorizontalAlignment="Stretch"/>
+                                       </Grid>
+                                       <Grid Grid.Row="3" ColumnDefinitions="*, 10, *" Margin="0,5,0,0">
+                                           <Button Grid.Column="0" Command="{Binding SaveTextPresetCommand}" Content="{local:Localize SavePreset}" HorizontalAlignment="Stretch" ToolTip.Tip="{local:Localize SavePresetTooltip}"/>
+                                           <Button Grid.Column="2" Command="{Binding LoadTextPresetCommand}" Content="{local:Localize LoadPreset}" HorizontalAlignment="Stretch" ToolTip.Tip="{local:Localize LoadPresetTooltip}"/>
+                                       </Grid>
+                                   </Grid>
+                                   
+                                   <!-- Center: Designer Canvas -->
+                                   <Grid Grid.Column="1" RowDefinitions="Auto, *, Auto" Margin="0,0,10,0">
+                                       <TextBlock Text="{local:Localize DesignerTitle}" Classes="label" HorizontalAlignment="Center" Margin="0,0,0,5"/>
+                                       
+                                       <Border Grid.Row="1" Background="#10FFFFFF" CornerRadius="4" ClipToBounds="True">
+                                           <!-- Viewbox scales the internal 160x80 canvas to fit available space while maintaining aspect ratio -->
+                                            <Viewbox Stretch="Uniform">
+                                                 <!-- Outer border for visual contrast (NOT captured) -->
+                                                 <Border BorderBrush="{DynamicResource SystemBaseHighColor}" BorderThickness="2"
+                                                         BoxShadow="0 4 15 0 #80000000">
+                                                     <!-- Actual content to capture (160x80) -->
+                                                     <Border x:Name="DesignerBorder" Width="160" Height="80" 
+                                                             Background="{Binding SelectedPage.BackgroundColor}">
+                                                     <ItemsControl x:Name="DesignerCanvas" ItemsSource="{Binding SelectedPage.Layers}" Width="160" Height="80">
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <Canvas Background="Transparent"/>
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                        <ItemsControl.ItemContainerTheme>
+                                                            <ControlTheme TargetType="ContentPresenter" x:DataType="models:TextLayer">
+                                                                <Setter Property="Canvas.Left" Value="{Binding X}"/>
+                                                                <Setter Property="Canvas.Top" Value="{Binding Y}"/>
+                                                            </ControlTheme>
+                                                        </ItemsControl.ItemContainerTheme>
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <!-- Wrappers to handle selection and drag -->
+                                                                <Border Background="Transparent" 
+                                                                        PointerPressed="OnLayerPointerPressed"
+                                                                        PointerMoved="OnLayerPointerMoved"
+                                                                        PointerReleased="OnLayerPointerReleased">
+                                                                    <TextBlock Text="{Binding DisplayText}" 
+                                                                               Foreground="{Binding Color}" 
+                                                                               FontSize="{Binding FontSize}" 
+                                                                               FontFamily="{Binding FontFamily}"/>
+                                                                </Border>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                </Border>
+                                            </Border> <!-- Closing outer visual border -->
+                                           </Viewbox>
+                                       </Border>
+                                       
+                                        <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center" Margin="0,10,0,0">
+                                            <ToggleButton IsChecked="{Binding IsRotationEnabled}" ToolTip.Tip="Toggle Rotation">
+                                                 <Grid ColumnDefinitions="Auto, 5, Auto">
+                                                     <TextBlock Text="▶️" IsVisible="{Binding !IsRotationEnabled}"/>
+                                                     <TextBlock Text="⏹️" IsVisible="{Binding IsRotationEnabled}"/>
+                                                     <TextBlock Grid.Column="2" Text="{local:Localize StartRotation}" IsVisible="{Binding !IsRotationEnabled}"/> 
+                                                     <TextBlock Grid.Column="2" Text="{local:Localize StopRotation}" IsVisible="{Binding IsRotationEnabled}"/>
+                                                </Grid>
+                                           </ToggleButton>
+                                            <Button Command="{Binding SendPageToScreenCommand}" Content="{local:Localize SendPage}" Classes="accent"/>
+                                       </StackPanel>
+                                   </Grid>
+                                   
+                                   <!-- Right: Properties -->
+                                   <ScrollViewer Grid.Column="2">
+                                       <StackPanel Spacing="15">
+                                           <!-- Page Properties -->
+                                           <Border Classes="card" Padding="10">
+                                               <StackPanel Spacing="10">
+                                                   <TextBlock Text="{local:Localize PageProperties}" FontWeight="Bold"/>
+                                                   
+                                                   <TextBlock Text="{local:Localize Name}" Classes="label"/>
+                                                   <TextBox Text="{Binding SelectedPage.Name}"/>
+                                                   
+                                                   <TextBlock Text="{local:Localize DurationSeconds}" Classes="label"/>
+                                                   <NumericUpDown Value="{Binding SelectedPage.DurationSeconds}" Minimum="1" Maximum="60"/>
+                                                   
+                                                                                                       <StackPanel Orientation="Horizontal" Spacing="5">
+                                                        <TextBlock Text="{local:Localize Background}" Classes="label" VerticalAlignment="Center"/>
+                                                        <Border Background="{DynamicResource SystemAccentColor}" Width="14" Height="14" CornerRadius="7" ToolTip.Tip="{local:Localize ColorHint}" Cursor="Help" VerticalAlignment="Center">
+                                                            <TextBlock Text="?" Foreground="White" FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                        </Border>
+                                                    </StackPanel>
+
+                                                   <ComboBox ItemsSource="{Binding CommonColors}" 
+                                                             SelectedItem="{Binding SelectedPage.BackgroundColor}"
+                                                             IsEditable="True"
+                                                             HorizontalAlignment="Stretch"/>
+                                               </StackPanel>
+                                           </Border>
+                                           
+                                           <!-- Layer Tools -->
+                                                                                       <StackPanel Spacing="10">
+                                                <Grid ColumnDefinitions="*, 10, *">
+                                                    <Button Grid.Column="0" Command="{Binding AddLayerCommand}" Content="{local:Localize AddTextLayer}" HorizontalAlignment="Stretch"/>
+                                                    <Button Grid.Column="2" Command="{Binding RemoveLayerCommand}" CommandParameter="{Binding SelectedLayer}" Content="{local:Localize RemoveTextLayer}" HorizontalAlignment="Stretch"/>
+                                                </Grid>
+                                                <Grid ColumnDefinitions="*, 10, *" IsVisible="{Binding SelectedLayer, Converter={x:Static ObjectConverters.IsNotNull}}">
+                                                    <Button Grid.Column="0" Command="{Binding MoveLayerDownCommand}" CommandParameter="{Binding SelectedLayer}" Content="{local:Localize MoveLayerDown}" HorizontalAlignment="Stretch"/>
+                                                    <Button Grid.Column="2" Command="{Binding MoveLayerUpCommand}" CommandParameter="{Binding SelectedLayer}" Content="{local:Localize MoveLayerUp}" HorizontalAlignment="Stretch"/>
+                                                </Grid>
+                                                <Button Command="{Binding DuplicateLayerCommand}" CommandParameter="{Binding SelectedLayer}" Content="{local:Localize DuplicateLayer}" HorizontalAlignment="Stretch" IsVisible="{Binding SelectedLayer, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+                                            </StackPanel>
+
+                                           
+                                           <!-- Layer Properties -->
+                                           <Border Classes="card" Padding="10" IsVisible="{Binding SelectedLayer, Converter={x:Static ObjectConverters.IsNotNull}}">
+                                               <StackPanel Spacing="10">
+                                                   <TextBlock Text="{local:Localize LayerProperties}" FontWeight="Bold"/>
+
+                                                                                                      <StackPanel Orientation="Horizontal" Spacing="4">
+                                                       <TextBlock Text="{local:Localize TextLabel}" Classes="label" VerticalAlignment="Center"/>
+                                                       <Border Background="{DynamicResource SystemAccentColor}" Width="14" Height="14" CornerRadius="7" ToolTip.Tip="{local:Localize DynamicVariablesHint}" Cursor="Help" VerticalAlignment="Center">
+                                                           <TextBlock Text="?" Foreground="White" FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                       </Border>
+                                                   </StackPanel>
+
+                                                   <TextBox Text="{Binding SelectedLayer.Text}"/>
+                                                    
+                                                               
+                                                              
+                                                              
+                                                              
+                                                   
+                                                   <Grid ColumnDefinitions="*, 10, *">
+                                                       <StackPanel Grid.Column="0" Spacing="5">
+                                                           <TextBlock Text="{local:Localize PositionX}" Classes="label"/>
+                                                           <Grid ColumnDefinitions="Auto, *, Auto">
+                                                               <RepeatButton Grid.Column="0" Command="{Binding MoveXLeftCommand}" CommandParameter="{Binding SelectedLayer}" Content="←" Padding="5,0" MinHeight="30" VerticalAlignment="Stretch" Delay="500" Interval="50"/>
+                                                               <NumericUpDown Grid.Column="1" Value="{Binding SelectedLayer.X}" ShowButtonSpinner="False" BorderThickness="1,0"/>
+                                                               <RepeatButton Grid.Column="2" Command="{Binding MoveXRightCommand}" CommandParameter="{Binding SelectedLayer}" Content="→" Padding="5,0" MinHeight="30" VerticalAlignment="Stretch" Delay="500" Interval="50"/>
+                                                           </Grid>
+                                                       </StackPanel>
+                                                       <StackPanel Grid.Column="2" Spacing="5">
+                                                           <TextBlock Text="{local:Localize PositionY}" Classes="label"/>
+                                                           <Grid ColumnDefinitions="Auto, *, Auto">
+                                                               <RepeatButton Grid.Column="0" Command="{Binding MoveYUpCommand}" CommandParameter="{Binding SelectedLayer}" Content="↑" Padding="5,0" MinHeight="30" VerticalAlignment="Stretch" Delay="500" Interval="50"/>
+                                                               <NumericUpDown Grid.Column="1" Value="{Binding SelectedLayer.Y}" ShowButtonSpinner="False" BorderThickness="1,0"/>
+                                                               <RepeatButton Grid.Column="2" Command="{Binding MoveYDownCommand}" CommandParameter="{Binding SelectedLayer}" Content="↓" Padding="5,0" MinHeight="30" VerticalAlignment="Stretch" Delay="500" Interval="50"/>
+                                                           </Grid>
+                                                       </StackPanel>
+                                                   </Grid>
+   
+                                                                                                       <StackPanel Orientation="Horizontal" Spacing="5">
+                                                        <TextBlock Text="{local:Localize Color}" Classes="label" VerticalAlignment="Center"/>
+                                                        <Border Background="{DynamicResource SystemAccentColor}" Width="14" Height="14" CornerRadius="7" ToolTip.Tip="{local:Localize ColorHint}" Cursor="Help" VerticalAlignment="Center">
+                                                            <TextBlock Text="?" Foreground="White" FontSize="10" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                        </Border>
+                                                    </StackPanel>
+
+                                                   <ComboBox ItemsSource="{Binding CommonColors}" 
+                                                             Text="{Binding SelectedLayer.Color}"
+                                                             IsEditable="True"
+                                                             HorizontalAlignment="Stretch"/>
+                                                   
+                                                   <TextBlock Text="{local:Localize FontSize}" Classes="label"/>
+                                                   <NumericUpDown Value="{Binding SelectedLayer.FontSize}" Minimum="8" Maximum="72"/>
+                                                   
+                                                   <TextBlock Text="{local:Localize FontFamily}" Classes="label"/>
+                                                   <TextBox Text="{Binding SelectedLayer.FontFamily}"/>
+                                               </StackPanel>
+                                           </Border>
+                                            
+                                            <TextBlock Text="{local:Localize SelectLayerHint}" 
+                                                       IsVisible="{Binding SelectedLayer, Converter={x:Static ObjectConverters.IsNull}}"
+                                                       Foreground="{DynamicResource TextControlForegroundDisabled}"
+                                                       TextWrapping="Wrap" HorizontalAlignment="Center"/>
+                                       </StackPanel>
+                                   </ScrollViewer>
+                               </Grid>
+                           </TabItem>
+                           
+                           <TabItem Header="{local:Localize TabFlashTool}">
+                               <Grid Margin="25" RowDefinitions="Auto, 30, Auto, 30, Auto, *">
+                                   <StackPanel Grid.Row="0" Spacing="8">
+                                       <TextBlock Text="{local:Localize FlashFirmware}" Classes="h1"/>
+                                       <TextBlock Text="{local:Localize FlashDescription}" Classes="label"/>
+                                   </StackPanel>
+                                   
+                                   <Grid Grid.Row="2" ColumnDefinitions="Auto, 15, *" RowDefinitions="Auto, 15, Auto">
+                                       <TextBlock Grid.Row="0" Grid.Column="0" Text="{local:Localize TargetFile}" Classes="label"/>
+                                       <Grid Grid.Row="0" Grid.Column="2" ColumnDefinitions="*, 10, Auto">
+                                            <TextBox Grid.Column="0" Text="{Binding FlashFilePath}" Watermark="{local:Localize FlashFilePlaceholder}"/>
+                                            <Button Grid.Column="2" Content="{local:Localize Browse}" Command="{Binding BrowseFlashCommand}"/>
+                                       </Grid>
+                                       
+                                       <TextBlock Grid.Row="2" Grid.Column="0" Text="{local:Localize FlashType}" Classes="label"/>
+                                       <ComboBox Grid.Row="2" Grid.Column="2" ItemsSource="{Binding FlashTypes}" SelectedItem="{Binding SelectedFlashType}" HorizontalAlignment="Stretch"/>
+                                   </Grid>
+                                   
+                                   <Button Grid.Row="4" Command="{Binding FlashCommand}" Content="{local:Localize StartFlashing}" Classes="accent" HorizontalAlignment="Right" Padding="30,12" FontSize="14"/>
+                               </Grid>
+                           </TabItem>
+                      </TabControl>
+                  </Border>
+             </Grid>
+        </Grid>
+
+        <!-- Settings Overlay -->
+        <Grid Name="SettingsOverlay" IsVisible="{Binding ShowSettings}" Background="#80000000">
+            <Border Background="{DynamicResource SystemRegionBrush}" 
+                    BorderBrush="{DynamicResource SurfaceStrokeColorDefaultBrush}" BorderThickness="1"
+                    CornerRadius="8" Padding="20" Width="350" VerticalAlignment="Center" HorizontalAlignment="Center"
+                    BoxShadow="0 8 32 0 #40000000">
+                <StackPanel Spacing="20">
+                    <Grid ColumnDefinitions="*, Auto">
+                        <TextBlock Text="{local:Localize Settings}" Classes="h1" FontSize="20"/>
+                        <Button Grid.Column="1" Command="{Binding CloseSettingsCommand}" Content="✕" Background="Transparent" Padding="5"/>
+                    </Grid>
+                    
+                    <StackPanel Spacing="10">
+                        <TextBlock Text="{local:Localize Theme}" Classes="label"/>
+                        <ComboBox ItemsSource="{Binding ThemeOptions}" SelectedItem="{Binding SelectedTheme}" HorizontalAlignment="Stretch"/>
+                        
+                        <TextBlock Text="{local:Localize Language}" Classes="label" Margin="0,10,0,0"/>
+                        <ComboBox ItemsSource="{Binding LanguageOptions}" SelectedItem="{Binding SelectedLanguage}" HorizontalAlignment="Stretch"/>
+                        
+                        <CheckBox IsChecked="{Binding MinimizeToTrayOnClose}" Content="{local:Localize MinimizeToTray}" Margin="0,10,0,0"/>
+                    </StackPanel>
+
+                    <!-- Restart Warning -->
+                    <StackPanel Spacing="10" IsVisible="{Binding RestartRequired}">
+                         <Border Background="#FEE2E2" BorderBrush="#EF4444" BorderThickness="1" CornerRadius="4" Padding="10">
+                              <StackPanel Orientation="Horizontal" Spacing="10">
+                                   <TextBlock Text="⚠️" VerticalAlignment="Center"/>
+                                   <TextBlock Text="{local:Localize RestartRequired}" Foreground="#B91C1C" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="12"/>
+                              </StackPanel>
+                         </Border>
+                         <Button Command="{Binding RestartApplicationCommand}" Content="{local:Localize RestartNow}" 
+                                 HorizontalAlignment="Stretch" Classes="accent" Background="#D32F2F" Foreground="White"/>
+                    </StackPanel>
+
+                    <Button Command="{Binding CloseSettingsCommand}" Content="{local:Localize Close}" HorizontalAlignment="Right" IsVisible="{Binding !RestartRequired}"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+        
+        <!-- About Overlay -->
+        <Border Background="#80000000" IsVisible="{Binding IsAboutVisible}" ZIndex="100">
+            <Border Background="{DynamicResource SystemRegionBrush}" CornerRadius="12" Width="450" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="30" BoxShadow="0 8 32 0 #40000000">
+                <StackPanel Spacing="20">
+                    <Grid ColumnDefinitions="*, Auto">
+                        <TextBlock Text="{local:Localize AboutTitle}" FontSize="24" FontWeight="Bold"/>
+                        <Button Grid.Column="1" Command="{Binding CloseAboutCommand}" Content="✕" Background="Transparent" BorderThickness="0" FontSize="18" Padding="5"/>
+                    </Grid>
+                    
+                    <StackPanel Spacing="10">
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="{local:Localize AuthorLabel}" FontWeight="SemiBold"/>
+                            <TextBlock Text="{Binding AuthorName, StringFormat=': {0}'}" x:CompileBindings="False"/>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="{local:Localize GitHubLabel}" FontWeight="SemiBold"/>
+                            <TextBlock Text=":"/>
+                            <Button Command="{Binding OpenGitHubCommand}" Content="{local:Localize GitHubRepoLink}" Background="Transparent" Padding="0" Foreground="{DynamicResource SystemAccentColor}" BorderThickness="0" Cursor="Hand"/>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                    <Border Background="{DynamicResource LayerFillColorDefaultBrush}" Padding="15" CornerRadius="8">
+                        <StackPanel Spacing="8">
+                            <TextBlock Text="{local:Localize AcknowledgementsLabel}" FontWeight="SemiBold" FontSize="14"/>
+                            <TextBlock Text="{local:Localize AcknowledgementsText}" TextWrapping="Wrap" Opacity="0.8" FontSize="13" LineHeight="20"/>
+                        </StackPanel>
+                    </Border>
+                    
+                    <Button Command="{Binding OpenDonationCommand}" Content="{local:Localize DonationLabel}" Classes="accent" HorizontalAlignment="Stretch" Padding="12"/>
+                    <TextBlock Text="{Binding AppVersion}" HorizontalAlignment="Center" FontSize="12" Opacity="0.5"/>
+                </StackPanel>
+            </Border>
+        </Border>
+    </Panel>
+</Window>

@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="0" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <!-- App Title -->
+  <data name="AppTitle" xml:space="preserve">
+    <value>USB Screen Manager</value>
+  </data>
+  <!-- Connection Section -->
+  <data name="Connection" xml:space="preserve">
+    <value>CONNECTION</value>
+  </data>
+  <data name="SelectPort" xml:space="preserve">
+    <value>Select Port</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Connect</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="Ready" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="Connected" xml:space="preserve">
+    <value>Connected to {0}</value>
+  </data>
+  <data name="Disconnected" xml:space="preserve">
+    <value>Disconnected</value>
+  </data>
+  <data name="NotConnected" xml:space="preserve">
+    <value>Not connected</value>
+  </data>
+  <data name="NoPortSelected" xml:space="preserve">
+    <value>No port selected</value>
+  </data>
+  <data name="ConnectionFailed" xml:space="preserve">
+    <value>Connection failed: {0}</value>
+  </data>
+  <!-- Tabs -->
+  <data name="TabImageDisplay" xml:space="preserve">
+    <value>Image Display</value>
+  </data>
+  <data name="TabTextDisplay" xml:space="preserve">
+    <value>Text Display</value>
+  </data>
+  <data name="TabImageSlideshow" xml:space="preserve">
+    <value>Image Slideshow</value>
+  </data>
+  <data name="TabTextSlideshow" xml:space="preserve">
+    <value>Text Slideshow</value>
+  </data>
+  <data name="TabFlashTool" xml:space="preserve">
+    <value>Flash Tool</value>
+  </data>
+  <!-- Image Display -->
+  <data name="DisplayImage" xml:space="preserve">
+    <value>Display Image</value>
+  </data>
+  <data name="ImageDescription" xml:space="preserve">
+    <value>Select and display images on the device.</value>
+  </data>
+  <data name="ImageFile" xml:space="preserve">
+    <value>Image File:</value>
+  </data>
+  <data name="ImagePathPlaceholder" xml:space="preserve">
+    <value>Path to image (png, jpg, gif)...</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Options:</value>
+  </data>
+  <data name="Scaling" xml:space="preserve">
+    <value>Scaling</value>
+  </data>
+  <data name="ResizeMode" xml:space="preserve">
+    <value>Resize Mode</value>
+  </data>
+  <data name="SendToScreen" xml:space="preserve">
+    <value>Send to Screen</value>
+  </data>
+  <!-- Text Display -->
+  <data name="DisplayText" xml:space="preserve">
+    <value>Display Text</value>
+  </data>
+  <data name="TextDescription" xml:space="preserve">
+    <value>Compose multiple lines of text.</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Background:</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Content...</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="AddLine" xml:space="preserve">
+    <value>+ Add Line</value>
+  </data>
+  <data name="SendText" xml:space="preserve">
+    <value>Send Text</value>
+  </data>
+  <!-- Slideshow -->
+  <data name="Slideshow" xml:space="preserve">
+    <value>Slideshow</value>
+  </data>
+  <data name="SlideshowDescription" xml:space="preserve">
+    <value>Cycle through images at set intervals.</value>
+  </data>
+  <data name="AddImages" xml:space="preserve">
+    <value>Add Images</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="IntervalSeconds" xml:space="preserve">
+    <value>Interval (sec):</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="DragDropHint" xml:space="preserve">
+    <value>Drop files here or click Add</value>
+  </data>
+  <!-- Flash Tool -->
+  <data name="FlashFirmware" xml:space="preserve">
+    <value>Flash Firmware</value>
+  </data>
+  <data name="FlashDescription" xml:space="preserve">
+    <value>Write raw binary data or images to device flash.</value>
+  </data>
+  <data name="TargetFile" xml:space="preserve">
+    <value>Target File:</value>
+  </data>
+  <data name="FlashFilePlaceholder" xml:space="preserve">
+    <value>Select .bin or image file...</value>
+  </data>
+  <data name="FlashType" xml:space="preserve">
+    <value>Flash Type:</value>
+  </data>
+  <data name="StartFlashing" xml:space="preserve">
+    <value>Start Flashing</value>
+  </data>
+  <!-- Status Messages -->
+  <data name="ProcessingImage" xml:space="preserve">
+    <value>Processing image...</value>
+  </data>
+  <data name="ImageDisplayed" xml:space="preserve">
+    <value>Image displayed</value>
+  </data>
+  <data name="DisplayingText" xml:space="preserve">
+    <value>Displaying text...</value>
+  </data>
+  <data name="TextDisplayed" xml:space="preserve">
+    <value>Text displayed</value>
+  </data>
+  <data name="PreparingFlash" xml:space="preserve">
+    <value>Preparing to flash...</value>
+  </data>
+  <data name="FlashComplete" xml:space="preserve">
+    <value>Flash complete!</value>
+  </data>
+  <data name="InvalidImageFile" xml:space="preserve">
+    <value>Invalid image file</value>
+  </data>
+  <data name="InvalidFlashFile" xml:space="preserve">
+    <value>Invalid flash file</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error: {0}</value>
+  </data>
+  <!-- Settings -->
+  <data name="Theme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <!-- Drag Drop -->
+  <data name="DropFilesHere" xml:space="preserve">
+    <value>Drop files here</value>
+  </data>
+  <!-- Settings -->
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="RestartRequired" xml:space="preserve">
+    <value>Restart required to apply changes</value>
+  </data>
+  <data name="RestartNow" xml:space="preserve">
+    <value>Restart Now</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <!-- Visual Designer -->
+  <data name="Pages" xml:space="preserve">
+    <value>Pages</value>
+  </data>
+  <data name="DesignerTitle" xml:space="preserve">
+    <value>Designer (160x80)</value>
+  </data>
+  <data name="SendPage" xml:space="preserve">
+    <value>Send Current Page</value>
+  </data>
+  <data name="PageProperties" xml:space="preserve">
+    <value>Page Properties</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="DurationSeconds" xml:space="preserve">
+    <value>Duration (s)</value>
+  </data>
+  <data name="DurationFormat" xml:space="preserve">
+    <value>Duration: {0}s</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="AddTextLayer" xml:space="preserve">
+    <value>Add Text</value>
+  </data>
+  <data name="RemoveTextLayer" xml:space="preserve">
+    <value>Remove Text</value>
+  </data>
+  <data name="LayerProperties" xml:space="preserve">
+    <value>Layer Properties</value>
+  </data>
+  <data name="TextLabel" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="PositionX" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="PositionY" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="FontSize" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="FontFamily" xml:space="preserve">
+    <value>Font</value>
+  </data>
+  <data name="SelectLayerHint" xml:space="preserve">
+    <value>Select a layer to edit properties</value>
+  </data>
+  <data name="DynamicVariablesHint" xml:space="preserve">
+    <value>Variables: %CPU%, %RAM%, %TIME%, %DATE%, %INET%</value>
+  </data>
+  <data name="ColorHint" xml:space="preserve">
+    <value>Supports named colors (e.g. Red) or Hex codes (e.g. #FF0000)</value>
+  </data>
+  <data name="MoveLayerUp" xml:space="preserve">
+    <value>Move Up</value>
+  </data>
+  <data name="MoveLayerDown" xml:space="preserve">
+    <value>Move Down</value>
+  </data>
+  <data name="DuplicateLayer" xml:space="preserve">
+    <value>Duplicate</value>
+  </data>
+  <data name="StopRotation" xml:space="preserve">
+    <value>Stop Rotation</value>
+  </data>
+  <data name="StartRotation" xml:space="preserve">
+    <value>Start Rotation</value>
+  </data>
+  <data name="AuthorLabel" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="AcknowledgementsLabel" xml:space="preserve">
+    <value>Acknowledgements</value>
+  </data>
+  <data name="AcknowledgementsText" xml:space="preserve">
+    <value>Thanks to Molly Studio for the USB screen and technical documentation/examples.</value>
+  </data>
+  <data name="DonationLabel" xml:space="preserve">
+    <value>Donation</value>
+  </data>
+  <data name="GitHubLabel" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="StatusReady" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="DefaultPageName" xml:space="preserve">
+    <value>Main Page</value>
+  </data>
+  <data name="StatusRotationStopped" xml:space="preserve">
+    <value>Rotation stopped</value>
+  </data>
+  <data name="StatusNotConnected" xml:space="preserve">
+    <value>Not connected</value>
+  </data>
+  <data name="StatusRendererError" xml:space="preserve">
+    <value>Renderer not initialized</value>
+  </data>
+  <data name="InvalidImageFile" xml:space="preserve">
+    <value>Invalid image file</value>
+  </data>
+  <data name="ProcessingImage" xml:space="preserve">
+    <value>Processing image...</value>
+  </data>
+  <data name="ImageDisplayed" xml:space="preserve">
+    <value>Image displayed</value>
+  </data>
+  <data name="InvalidFlashFile" xml:space="preserve">
+    <value>Invalid flash file</value>
+  </data>
+  <data name="PreparingToFlash" xml:space="preserve">
+    <value>Preparing to flash...</value>
+  </data>
+  <data name="FlashComplete" xml:space="preserve">
+    <value>Flash complete!</value>
+  </data>
+  <data name="GifPlaying" xml:space="preserve">
+    <value>GIF Playing...</value>
+  </data>
+  <data name="GitHubRepoLink" xml:space="preserve">
+    <value>UsbScreen Repository</value>
+  </data>
+  <data name="AuthorValue" xml:space="preserve">
+    <value>Blackwood</value>
+  </data>
+  <data name="ErrorPrefix" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="KeepAlive" xml:space="preserve">
+    <value>Keep Alive</value>
+  </data>
+  <!-- Save/Load Presets -->
+  <data name="SavePreset" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="LoadPreset" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="SavePresetTooltip" xml:space="preserve">
+    <value>Save current settings to a preset file</value>
+  </data>
+  <data name="LoadPresetTooltip" xml:space="preserve">
+    <value>Load settings from a preset file</value>
+  </data>
+  <data name="PresetSaved" xml:space="preserve">
+    <value>Preset saved successfully</value>
+  </data>
+  <data name="PresetLoaded" xml:space="preserve">
+    <value>Preset loaded successfully</value>
+  </data>
+  <data name="InvalidPresetFile" xml:space="preserve">
+    <value>Invalid preset file</value>
+  </data>
+  <!-- System Tray -->
+  <data name="MinimizeToTray" xml:space="preserve">
+    <value>Minimize to tray on close</value>
+  </data>
+  <data name="TrayShowWindow" xml:space="preserve">
+    <value>Show Window</value>
+  </data>
+  <data name="TrayHideWindow" xml:space="preserve">
+    <value>Hide Window</value>
+  </data>
+  <data name="TrayExit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+</root>
